@@ -1,0 +1,22 @@
+
+server:
+  port: 9110
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8030/eureka/
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 5
+spring:
+  application:
+    name: feign-client
+
+feign:
+  hystrix:
+    enabled: true
