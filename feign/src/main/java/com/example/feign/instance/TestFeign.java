@@ -16,4 +16,8 @@ public interface TestFeign {
     @ResponseBody
     @RequestMapping("dd")
     String dd();
+
+    @ResponseBody
+    @RequestMapping("pp")
+    String pp();
 }
